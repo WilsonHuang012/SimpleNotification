@@ -34,7 +34,9 @@ namespace SimpleNotification.Droid
     [IntentFilter(new string[] { Gcm.Client.Constants.INTENT_FROM_GCM_LIBRARY_RETRY }, Categories = new string[] { "@PACKAGE_NAME@" })]
     public class PushHandlerBroadcastReceiver : GcmBroadcastReceiverBase<GcmService>
     {
-        public static string[] SENDER_IDS = new string[] { "511114915678" };
+        public static string[] SENDER_IDS = new string[] { "1011401741204" };
+        public const string HUB_NAME = "SimpleNotificationHub";
+        public const string HUB_LISTEN_CONN = "Endpoint=sb://simplenotificationhubnamespace.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=id25Y2WaaqXnl6VPEo39mBVzcXcFA+B62Wpu1eeH0rs=";
     }
 
     [Service]
@@ -155,8 +157,8 @@ namespace SimpleNotification.Droid
         {
             Log.Error("PushHandlerBroadcastReceiver", "GCM Error: " + errorId);
         }
-
-
     }
-
 }
+
+
+
